@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+        table {
+            width: 70%;
+            margin: auto;
+        }
+        td {
+            padding: 5px;
+        }
+        th {
+            background-color: teal;
+            color: white;
+        }
+        tr:nth-child(odd) {
+            background-color: #9ac7c7;
+        }
+        tr:nth-child(even) {
+            background-color: #bcd4d6;
+        }
+    </style>
+</head>
+<body>
+  <h2>Cars</h2>
+  <table>
+    <tr>
+        <th>Model</th>
+        <th>Series</th>
+        <th>Year</th>
+    </tr>
+    <tr th:block th:each="car : ${cars}">
+        <td th:text="${car.getModel()}"></td>
+        <td th:text="${car.getSeries()}"></td>
+        <td th:text="${car.getYear()}"></td>
+    </tr>
+  </table>
+</body>
+</html>
